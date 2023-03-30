@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  image_name: ${{ secrets.DOCKERHUB_USERNAME }}/simple-api:dev
+  image_name: ${{ env.DOCKERHUB_USERNAME }}/simple-api:dev
 
 jobs:
   build:
@@ -15,10 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setting variables
+        run: |
+          sed -i "s/API_PORT_VALUE/${{ env.API_PORT }}/g" Dockerfile
+          sed -i "s/DB_DATABASE_VALUE/${{ env.DB_DATABASE }}/g" Dockerfile
+          sed -i "s/DB_HOST_VALUE/${{ env.DB_HOST }}/g" Dockerfile
+          sed -i "s/DB_PORT_VALUE/${{ env.DB_PORT }}/g" Dockerfile
+          sed -i "s/DB_USER_VALUE/${{ env.DB_USER }}/g" Dockerfile
+          sed -i "s/DB_PASSWORD_VALUE/${{ secrets.DB_PASSWORD }}/g" Dockerfile
+
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set up Docker Buildx
