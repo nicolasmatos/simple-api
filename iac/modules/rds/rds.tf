@@ -43,7 +43,7 @@ resource "aws_secretsmanager_secret_version" "rds" {
   secret_id = aws_secretsmanager_secret.secrets.id
   secret_string = jsonencode(
     {
-      "DB_DATABASE" = aws_db_instance.rds.name,
+      "DB_DATABASE" = aws_db_instance.rds.db_name,
       "DB_HOST"     = aws_db_instance.rds.endpoint,
       "DB_PORT"     = aws_db_instance.rds.port,
       "DB_USER"     = aws_db_instance.rds.username,
