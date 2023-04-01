@@ -9,3 +9,7 @@ output "rds_endpoint" {
 output "db_name" {
   value = var.db_name
 }
+
+output "api_port" {
+  value = var.api_port
+}

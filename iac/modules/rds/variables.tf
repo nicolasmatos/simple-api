@@ -1,3 +1,4 @@
+variable "owner" {}
 variable "aws_region" {}
 variable "project_name" {}
 variable "db_group_private" {}
@@ -26,4 +27,10 @@ variable "db_user" {
   type        = string
   description = "Database User"
   default     = "root"
+}
+
+variable "api_port" {
+  type        = number
+  description = "API PORT"
+  default     = 3000
 }
