@@ -2,14 +2,14 @@ version: 0.2
 
 env:
   secrets-manager:
-    DOCKERHUB_TOKEN: "/kxc-desafio-tecnico/dockerhub:DOCKERHUB_TOKEN"
-    DOCKERHUB_USERNAME: "/kxc-desafio-tecnico/dockerhub:DOCKERHUB_USERNAME"
-    DB_DATABASE: "/kxc-desafio-tecnico/terraform-secrets:DB_DATABASE"
-    DB_HOST: "/kxc-desafio-tecnico/terraform-secrets:DB_HOST"
-    DB_PASSWORD: "/kxc-desafio-tecnico/terraform-secrets:DB_PASSWORD"
-    DB_PORT: "/kxc-desafio-tecnico/terraform-secrets:DB_PORT"
-    DB_USER: "/kxc-desafio-tecnico/terraform-secrets:DB_USER"
-    IMAGE_NAME: "$DOCKERHUB_USERNAME/simple-api:dev"
+    DOCKERHUB_TOKEN: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/dockerhub-5K8Q1a:DOCKERHUB_TOKEN
+    DOCKERHUB_USERNAME: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/dockerhub-5K8Q1a:DOCKERHUB_USERNAME
+    DB_DATABASE: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_DATABASE
+    DB_HOST: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_HOST
+    DB_PASSWORD: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_PASSWORD
+    DB_PORT: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_PORT
+    DB_USER: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_USER
+  IMAGE_NAME: "$DOCKERHUB_USERNAME/simple-api:dev"
 phases:
   pre_build:
     commands:
