@@ -2,15 +2,15 @@ version: 0.2
 
 env:
   secrets-manager:
-    OWNER: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:OWNER
-    AWS_REGION: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:AWS_REGION
-    PROJECT_NAME: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:PROJECT_NAME
-    API_PORT: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:API_PORT
-    DB_DATABASE: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_DATABASE
-    DB_HOST: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_HOST
-    DB_PASSWORD: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_PASSWORD
-    DB_PORT: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_PORT
-    DB_USER: arn:aws:secretsmanager:us-east-1:455462641947:secret:/kxc-desafio-tecnico/terraform-secrets-3vtkan:DB_USER
+    OWNER: $SECRET_ARN:OWNER
+    AWS_REGION: $SECRET_ARN:AWS_REGION
+    PROJECT_NAME: $SECRET_ARN:PROJECT_NAME
+    API_PORT: $SECRET_ARN:API_PORT
+    DB_DATABASE: $SECRET_ARN:DB_DATABASE
+    DB_HOST: $SECRET_ARN:DB_HOST
+    DB_PASSWORD: $SECRET_ARN:DB_PASSWORD
+    DB_PORT: $SECRET_ARN:DB_PORT
+    DB_USER: $SECRET_ARN:DB_USER
 phases:
   pre_build:
     commands:
