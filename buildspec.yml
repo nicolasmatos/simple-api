@@ -33,3 +33,7 @@ phases:
         - echo Pushing the Docker image `date`...
         - docker push $OWNER.dkr.ecr.$AWS_REGION.amazonaws.com/$PROJECT_NAME:DEV
         - echo Finish build `date`...
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/**/*
