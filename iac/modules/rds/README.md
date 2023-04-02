@@ -36,6 +36,7 @@
 
 | Name | Type | Default | Required |
 |------|------|---------|:--------:|
+| <a name="owner"></a> owner | `string` | `null` | yes |
 | <a name="aws_region"></a> aws_region | `string` | `null` | yes |
 | <a name="project_name"></a> project_name | `string` | `null` | yes |
 

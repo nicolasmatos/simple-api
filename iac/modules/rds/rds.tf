@@ -1,8 +1,16 @@
 resource "random_password" "password" {
+  length           = 12
+  special          = true
+  override_special = "#"
+}
+
+/*
+resource "random_password" "password" {
   length           = 32
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
+*/
 
 resource "aws_db_instance" "rds" {
   allocated_storage      = 20
@@ -48,7 +56,7 @@ resource "aws_secretsmanager_secret_version" "rds" {
       "PROJECT_NAME" = var.project_name,
       "API_PORT"     = var.api_port,
       "DB_DATABASE"  = aws_db_instance.rds.db_name,
-      "DB_HOST"      = aws_db_instance.rds.endpoint,
+      "DB_HOST"      = aws_db_instance.rds.address,
       "DB_PORT"      = aws_db_instance.rds.port,
       "DB_USER"      = aws_db_instance.rds.username,
       "DB_PASSWORD"  = random_password.password.result
