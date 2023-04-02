@@ -58,3 +58,4 @@
 | <a name="ec2_instance_type"></a> ec2_instance_type | Instance Type |
 | <a name="ec2_monitoring"></a> ec2_monitoring | Instance Logs |
 | <a name="key_name"></a> key_name | Key Pair Name |
+| <a name="iam_instance_profile"></a> iam_instance_profile | IAM Profile |

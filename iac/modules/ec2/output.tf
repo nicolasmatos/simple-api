@@ -13,3 +13,7 @@ output "ec2_monitoring" {
 output "key_name" {
   value = var.key_name
 }
+
+output "iam_instance_profile" {
+  value = aws_iam_instance_profile.instance_profile_ec2.name
+}
