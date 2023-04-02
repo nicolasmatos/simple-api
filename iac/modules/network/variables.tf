@@ -1,3 +1,4 @@
+variable "owner" {}
 variable "aws_region" {}
 variable "project_name" {}
 variable "tags" {}
@@ -28,7 +29,7 @@ variable "sg_ec2" {
 variable "sg_alb" {
   type        = list(number)
   description = "Ports for the SG Load Balance"
-  default     = [80, 443]
+  default     = [80, 443, 3000]
 }
 
 variable "sg_rds" {
