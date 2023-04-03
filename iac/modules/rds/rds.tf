@@ -17,7 +17,7 @@ resource "aws_db_instance" "rds" {
   storage_type           = "gp2"
   engine                 = "postgres"
   engine_version         = "14"
-  identifier             = var.db_name
+  identifier             = "db-${var.project_name}"
   instance_class         = var.db_instance_type
   db_name                = var.db_name
   username               = var.db_user
