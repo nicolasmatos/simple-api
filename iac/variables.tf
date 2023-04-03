@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "owner" {
   type        = string
   description = ""
-  default     = "KXC Tecnologia"
+  default     = "455462641947"
 }
 
 variable "project_name" {
